@@ -1,11 +1,12 @@
 import FaceImage from './FaceImage';
+import setCanvasSize from './setCanvasSize';
 
 const canvas = document.querySelector('canvas');
 const h = window.innerHeight;
 const w = window.innerWidth;
 const ctx = canvas!.getContext('2d');
 
-canvas!.width = w;
-canvas!.height = h;
-
-new FaceImage();
+setCanvasSize(canvas!, w, h);
+window.addEventListener('resize', () => {
+  setCanvasSize(canvas!, w, h);
+});
