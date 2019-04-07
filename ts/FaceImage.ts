@@ -4,14 +4,27 @@ export interface FaceImageOptions {
 
 export default class FaceImage {
   private img!: HTMLImageElement;
+  private ctx!: CanvasRenderingContext2D;
+  private y: number;
 
   constructor(ctx: CanvasRenderingContext2D, options: FaceImageOptions) {
+    this.y = this.startingY;
+    this.ctx = ctx;
     this.img = new Image();
     this.img.src = options.src;
 
     this.img.addEventListener('load', () => {
-      ctx.drawImage(this.img, 0, 0, this.imageSquare, this.imageSquare);
+      this.draw(this.y);
     });
+  }
+
+  public update() {
+    this.draw(this.y);
+    this.y++;
+  }
+
+  private draw(y: number) {
+    this.ctx.drawImage(this.img, 0, y, this.imageSquare, this.imageSquare);
   }
 
   get startingY() {

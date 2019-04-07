@@ -11,6 +11,12 @@ const images = [
   'img/sara.jpg'
 ];
 
+function animate(f: FaceImage) {
+  ctx!.clearRect(0, 0, w, h);
+  f.update();
+  window.requestAnimationFrame(() => animate(f));
+}
+
 function init() {
   const randomImageNumber = Math.floor(Math.random() * images.length);
   const options: FaceImageOptions = {
@@ -18,6 +24,7 @@ function init() {
   };
 
   const f = new FaceImage(ctx!, options);
+  animate(f);
 }
 
 init();
