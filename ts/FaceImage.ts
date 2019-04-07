@@ -16,7 +16,12 @@ export default class FaceImage {
 
   public update() {
     this.draw(this.y);
-    this.y = this.y + 100;
+
+    if (this.y + 100 < this.h - this.imageSquare) {
+      this.y = this.y + 100;
+    } else {
+      this.y = this.h - this.imageSquare;
+    }
   }
 
   private draw(y: number) {
