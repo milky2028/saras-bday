@@ -32,5 +32,5 @@ function init() {
 init();
 SetCanvasSize(canvas!, w, h);
 window.addEventListener('resize', () => {
-  SetCanvasSize(canvas!, w, h);
+  window.location.reload();
 });
