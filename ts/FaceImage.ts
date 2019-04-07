@@ -32,7 +32,11 @@ export default class FaceImage {
   }
 
   get imageSquare() {
-    return (this.w <= 375)
+    return (this.w >= 1125)
+    ? this.w / 4
+    : (this.w >= 750)
+    ? this.w / 3
+    : (this.w <= 375)
     ? this.dpi * 330
     : this.w / 2;
   }
