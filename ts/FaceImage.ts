@@ -12,15 +12,11 @@ export default class FaceImage {
     this.ctx = ctx;
     this.img = new Image();
     this.img.src = options.src;
-
-    this.img.addEventListener('load', () => {
-      this.draw(this.y);
-    });
   }
 
   public update() {
     this.draw(this.y);
-    this.y++;
+    this.y = this.y + 100;
   }
 
   private draw(y: number) {

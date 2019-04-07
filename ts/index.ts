@@ -12,9 +12,11 @@ const images = [
 ];
 
 function animate(f: FaceImage) {
+  setTimeout(() => {
+    window.requestAnimationFrame(() => animate(f));
+  }, 1500);
   ctx!.clearRect(0, 0, w, h);
   f.update();
-  window.requestAnimationFrame(() => animate(f));
 }
 
 function init() {
