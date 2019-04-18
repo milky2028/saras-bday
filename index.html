@@ -1,7 +1,9 @@
 <html>
   <head>
     <title>Happy Birthday Sara!</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta charset="UTF-8" />
+    <link href="./css/styles.css" rel="stylesheet" type="text/css">
     <style>
       body {
         margin: 0;
@@ -13,7 +15,14 @@
 
   <body>
     <div id="app">
+      <h1>Tap sides to rotate</h1>
+      <div id="left-area" class="btns">
+        <p class="icons"><</p>
+      </div>
       <canvas></canvas>
+      <div id="right-area" class="btns">
+        <p class="icons">></p>
+      </div>
     </div>
     <script src="js/index.js" type="module"></script>
   </body>

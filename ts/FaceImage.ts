@@ -5,17 +5,19 @@ export interface FaceImageOptions {
 export default class FaceImage {
   private img!: HTMLImageElement;
   private ctx!: CanvasRenderingContext2D;
-  private y: number;
+  private y!: number;
+  private x!: number;
 
   constructor(ctx: CanvasRenderingContext2D, options: FaceImageOptions) {
     this.y = this.startingY;
+    this.x = 0;
     this.ctx = ctx;
     this.img = new Image();
     this.img.src = options.src;
   }
 
   public update() {
-    this.draw(this.y);
+    this.draw(this.x, this.y);
 
     if (this.y + 100 < this.h - this.imageSquare) {
       this.y = this.y + 100;
@@ -24,16 +26,13 @@ export default class FaceImage {
     }
   }
 
-  private draw(y: number) {
-    this.ctx.drawImage(this.img, 0, y, this.imageSquare, this.imageSquare);
+  private draw(x: number, y: number) {
+    this.ctx.drawImage(this.img, x, y, this.imageSquare, this.imageSquare);
+    this.img.style.display = 'none';
   }
 
   get startingY() {
     return 0 - this.imageSquare;
-  }
-
-  get dpi() {
-    return window.devicePixelRatio;
   }
 
   get imageSquare() {
@@ -42,7 +41,7 @@ export default class FaceImage {
     : (this.w >= 750)
     ? this.w / 3
     : (this.w <= 375)
-    ? this.dpi * 330
+    ? this.w
     : this.w / 2;
   }
 
