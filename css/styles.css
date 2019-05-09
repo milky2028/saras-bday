@@ -1,52 +1,67 @@
 body {
-    transition: 150ms ease-in;
-    background-color: rgba(0, 0, 0, 0.8);
+  transition: 150ms ease-in;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 h1 {
-    position: absolute;
-    color: white;
-    margin-top: 12vh;
-    text-align: center;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    padding: 24px;
+  position: absolute;
+  color: white;
+  margin-top: 12vh;
+  text-align: center;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  padding: 24px;
 }
 
 #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "left right";
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left right";
+  height: 100vh;
 }
 
 .btns {
-    grid-area: left;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 45vw;
-    position: absolute;
-    display: grid;
-    justify-items: center;
-    align-items: center;
+  grid-area: left;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 45vw;
+  position: absolute;
+  display: grid;
+  justify-items: center;
+  align-items: center;
 }
 
 #right-area {
-    grid-area: right;
-    right: 0;
+  grid-area: right;
+  right: 0;
 }
 
 .icons {
-    color: white;
-    margin: 0;
-    font-size: 55px;
-    font-weight: 900;
-    background-color: black;
-    padding: 9px 26px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.7)
+  color: white;
+  margin: 0;
+  font-size: 55px;
+  font-weight: 900;
+  background-color: black;
+  padding: 9px 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  animation: pulse 1s infinite;
 }
 
-.pulse {
-    background-color: violet; 
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  66% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

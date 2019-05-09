@@ -7,5 +7,5 @@ export async function TutorialAnimation() {
     header!.remove()
     body!.style.backgroundColor = 'transparent';
     tapIcons.forEach((icon: HTMLParagraphElement) => icon.remove());
-  }, 5000);
+  }, 3000);
 }
