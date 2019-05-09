@@ -1,23 +1,30 @@
 body {
     transition: 150ms ease-in;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 h1 {
+    position: absolute;
+    color: white;
     margin-top: 12vh;
     text-align: center;
     font-family: sans-serif;
     text-transform: uppercase;
+    padding: 24px;
 }
 
 #app {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left right";
     height: 100vh;
 }
 
 .btns {
+    grid-area: left;
     box-sizing: border-box;
     height: 100vh;
-    width: 40vw;
+    width: 45vw;
     position: absolute;
     display: grid;
     justify-items: center;
@@ -25,14 +32,21 @@ h1 {
 }
 
 #right-area {
+    grid-area: right;
     right: 0;
 }
 
 .icons {
+    color: white;
     margin: 0;
-    font-size: 68px;
+    font-size: 55px;
     font-weight: 900;
-    background-color: purple;
-    padding: 12px 32px;
+    background-color: black;
+    padding: 9px 26px;
     border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.7)
+}
+
+.pulse {
+    background-color: violet; 
 }

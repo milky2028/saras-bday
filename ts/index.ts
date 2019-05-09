@@ -48,7 +48,5 @@ rightBtn!.addEventListener('click', (event) => {
 });
 
 TutorialAnimation();
-setTimeout(() => {
-  init();
-}, 3000);
+setTimeout(() => init(), 5000);
 SetCanvasSize(canvas!, w, h);
